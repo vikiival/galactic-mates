@@ -22,7 +22,7 @@ import {
 } from "wagmi";
 
 import { config } from "~/components/providers/WagmiProvider";
-import { Button } from "~/components/ui/Button";
+import { Button } from "~/components/ui/CastButton";
 import { truncateAddress } from "~/lib/truncateAddress";
 import { base, degen, mainnet, optimism } from "wagmi/chains";
 import { BaseError, UserRejectedRequestError } from "viem";
