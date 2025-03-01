@@ -87,7 +87,7 @@ def initialize_agent():
     seed = get_space_random_seed()
 
     # Initialize LLM: https://platform.openai.com/docs/models#gpt-4o
-    llm = ChatOpenAI(model="gpt-4o-mini", seed=seed["value"])
+    llm = ChatOpenAI(model="gpt-4o-mini", seed=int(seed["value"], 16))
 
     print(seed, seed["value"])
 
