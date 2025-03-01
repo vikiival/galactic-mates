@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@farcaster/auth-client": "^0.3.0",
     "@farcaster/auth-kit": "^0.6.0",
     "@farcaster/frame-core": "^0.0.22",
     "@farcaster/frame-node": "^0.0.7",
@@ -23,6 +24,7 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.469.0",
+    "mipd": "^0.0.7",
     "next": "15.0.3",
     "next-auth": "^4.24.11",
     "ox": "^0.4.2",
@@ -32,7 +34,8 @@
     "tailwind-merge": "^2.6.0",
     "tailwindcss-animate": "^1.0.7",
     "viem": "^2.21.55",
-    "wagmi": "^2.14.3"
+    "wagmi": "^2.14.3",
+    "zod": "^3.24.2"
   },
   "devDependencies": {
     "@types/node": "^20",
