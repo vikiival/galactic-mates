@@ -27,6 +27,7 @@ from coinbase_agentkit import (
 from coinbase_agentkit_langchain import get_langchain_tools
 
 from eth_account import Account
+import requests
 
 """
 AgentKit Integration
@@ -69,13 +70,27 @@ wallet_data_file = "wallet_data.txt"
 
 load_dotenv()
 
+def get_space_random_seed():
+    """Fetch a random seed from the specified API."""
+    url = "https://op.spacecoin.xyz/api/v1/rand_seed"
+    try:
+        response = requests.get(url)
+        response.raise_for_status()
+        return response.json()
+    except requests.RequestException as e:
+        print(f"Error fetching random seed: {e}")
+        return None
+
 def initialize_agent():
     """Initialize the agent with an Ethereum Account Wallet Provider."""
 
-    # Initialize LLM: https://platform.openai.com/docs/models#gpt-4o
-    llm = ChatOpenAI(model="gpt-4o-mini", seed=42)
+    seed = get_space_random_seed()
 
-    
+    # Initialize LLM: https://platform.openai.com/docs/models#gpt-4o
+    llm = ChatOpenAI(model="gpt-4o-mini", seed=seed["value"])
+
+    print(seed, seed["value"])
+
     # Initialize WalletProvider: https://docs.cdp.coinbase.com/agentkit/docs/wallet-management
     private_key = os.getenv("PRIVATE_KEY")
     
