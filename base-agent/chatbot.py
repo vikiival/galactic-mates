@@ -85,9 +85,10 @@ def initialize_agent():
     """Initialize the agent with an Ethereum Account Wallet Provider."""
 
     seed = get_space_random_seed()
-
+    # Ensure the seed is within the acceptable range
+    seed_value = int(seed["value"], 16) % (2**63)
     # Initialize LLM: https://platform.openai.com/docs/models#gpt-4o
-    llm = ChatOpenAI(model="gpt-4o-mini", seed=int(seed["value"], 16))
+    llm = ChatOpenAI(model="gpt-4o-mini", seed=seed_value)
 
     print(seed, seed["value"])
 
