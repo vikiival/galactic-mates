@@ -1,12 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { Hex } from 'ox'
 
-export function entropyFromSeed(randomness: string): number {
-  return Hex.toNumber(`0x${randomness}`) % 1e10
-}
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export async function GET(_request: NextRequest) {
+  function entropyFromSeed(randomness: string): number {
+    return Hex.toNumber(`0x${randomness}`) % 1e10
+  }
 
   const res = {
     value: '9db503b4f269804d4b9dc50899e4bf155e202f4d74de2f9b8f2dbf0496098b24',
