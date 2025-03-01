@@ -9,7 +9,7 @@ import ChatWindow from "./ChatWindow"
 // import { SignIn } from "./SignIn"
 // import { useSession } from "next-auth/react"
 
-// eslint-disable-next-line @next/next/no-img-element
+// eslint-disable-next-line @next/next/no-img-element, @typescript-eslint/no-explicit-any
 const Image = (props: any) => <img {...props} />
 
 export default function PersonalityAnalyzer({ seed }: { seed: number }) {

@@ -8,6 +8,7 @@ const Demo = dynamic(() => import("~/components/Form"), {
 });
 
 export default function App(
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   { title }: { title?: string } = { title: "Frames v2 Demo" }
 ) {
   const [seed, setSeed] = useState<number>(0);
